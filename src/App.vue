@@ -1,19 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import axios from 'axios'
+// import jsonp from "jsonp";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+  data() {
+    return {};
+  },
+  // mounted() {
+  //   let url = "/api/search/hotwords";
+  //   // let url = '/search/hotwords'
+  //   /*  axios.get(url).then(() => {
+      
+  //   }) */
+  //   jsonp(url, (err, res) => {
+  //     this.result = res;
+  //   });
+  // },
+};
 </script>
 
 <style>
