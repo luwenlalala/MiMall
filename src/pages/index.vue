@@ -1,6 +1,8 @@
 <template>
 <!-- index页面会嵌套在home页面中 -->
-  <div></div>
+  <div>
+    index
+  </div>
 </template>
 
 <script>
