@@ -7,6 +7,7 @@
 <script>
 // import axios from 'axios'
 // import jsonp from "jsonp";
+// import Storage from './storage/index'
 
 export default {
   name: "App",
@@ -24,6 +25,10 @@ export default {
   //     this.result = res;
   //   });
   // },
+  mounted() {
+    // console.log(Storage.getItem('userName','user'));
+    
+  }
 };
 </script>
 
