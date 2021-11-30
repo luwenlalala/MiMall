@@ -1,0 +1,12 @@
+{
+  "status": 0,
+  "data": {
+    "id": 12,
+    "username": "admin",
+    "email":"admin@qq.com",
+    "phone": null,
+    "role": 0,
+    "creatTime": 0,
+    "updateTime": 1
+  }
+}
