@@ -25,7 +25,7 @@
           </div>
           <div class="tips">
             <div class="sms" @click="register">手机短信登录/注册</div>
-            <div class="reg" >立即注册<span>|</span>忘记密码？</div>
+            <div class="reg">立即注册<span>|</span>忘记密码？</div>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
   </div>
 </template>
 <script>
-import {mapActions} from 'vuex'
+import { mapActions } from "vuex";
 export default {
   name: "login",
   data() {
@@ -71,24 +71,35 @@ export default {
           password,
         })
         .then((res) => {
-          this.$cookie.set("userId", res.id, { expires: "1M" });
+          this.$cookie.set("userId", res.id, { expires: "session" });
           // this.$store.dispatch('saveUserName',res.username)
-          this.saveUserName(res.username)
-          this.$router.push("/index");
+          this.saveUserName(res.username);
+          /*         this.$router.push({
+path: "/index",
+query: {
+  from: 'login'
+} 
+  }); */
+          this.$router.push({
+            name: "index",
+            params: {
+              from: "login",
+            },
+          });
         });
     },
-    ...mapActions(['saveUserName']),
+    ...mapActions(["saveUserName"]),
     register() {
       this.axios
         .post("/user/register", {
-          username:'hhh',
-          password: 'hhh',
-          email: 'admin1@163.com'
+          username: "hhh",
+          password: "hhh",
+          email: "admin1@163.com",
         })
         .then(() => {
-        alert('注册成功')
+          this.$message.success("注册成功");
         });
-    }
+    },
   },
 };
 </script>

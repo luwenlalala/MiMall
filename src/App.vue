@@ -47,9 +47,10 @@ export default {
     this.axios.get('/user/login').then((res) => {
       this.res = res
     }) */
-
-    this.getUser()
-    this.getCartCount()
+if(this.$cookie.get('userId')) {
+  this.getUser()
+  this.getCartCount()
+}
   },
 
   methods: {

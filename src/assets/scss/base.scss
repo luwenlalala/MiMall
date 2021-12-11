@@ -1,19 +1,76 @@
+@import './mixin.scss';
 .container {
-  width: 1226px;
-  position: relative;
+  width       : 1226px;
+  position    : relative;
   margin-right: auto;
-  margin-left: auto;
+  margin-left : auto;
 }
 
 a {
   img {
-    width: 100%;
+    width : 100%;
     height: 100%;
   }
 }
 
 input {
-  outline: none;
+  outline   : none;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size : 14px;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.header-logo {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-color: #ff6600;
+  a {
+    display: inline-block;
+    width: 110px;
+    height: 55px;
+    // 伪类
+    &:before {
+      content: " ";
+      /*   display: inline-block;
+      width: 55px;
+      height: 55px;
+      background: url("/imgs/mi-logo.png") no-repeat center;
+      background-size: 55px; */
+
+      @include bgImg(55px, 55px, "/imgs/mi-logo.png", 55px);
+      transition: margin 0.2s; // 设置margin为过渡,2s
+    }
+    &:after {
+      content: " ";
+      /*  display: inline-block;
+      width: 55px;
+      height: 55px;
+      background: url("/imgs/mi-home.png") no-repeat center;
+      background-size: 55px; */
+
+      @include bgImg(55px, 55px, "/imgs/mi-home.png", 55px);
+    }
+    &:hover:before {
+      margin-left: -55px;
+      transition: margin 0.2s;
+    }
+  }
 }

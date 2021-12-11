@@ -51,6 +51,7 @@ window.removeEventListener('scroll',this.initHeight,false)
   line-height: 70px;
   border-top: 1px solid $colorH;
   background-color: $colorG;
+  z-index: 10;
   &.isFixed {
     position: fixed;
     top: 0;

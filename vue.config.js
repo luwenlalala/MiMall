@@ -1,7 +1,7 @@
 module.exports = {
    devServer: {
      host: 'localhost',
-     port: 8081,
+     port: 8888,
      proxy: {
  /*       '/search': {
          target: 'https://www.imooc.com',
@@ -24,7 +24,16 @@ module.exports = {
          pathRewrite: {
            '/api': ''
          }
-       }
-     }
-   }
+       },
+      },
+    },
+    // publicPath: '/app',
+    // outputDir: 'dist',
+    // indexPath: 'index2.html',
+    productionSourceMap: false, // 不输出js.map文件,代码被压缩,防止别人看懂代码
+    // lintOnSave: false
+    chainWebpack: config => {
+      // 删除预加载
+      config.plugins.delete('prefetch')
+    }
 }
